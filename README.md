@@ -2,7 +2,9 @@
 
 E-commerce project based on [Reaction Commerce](https://github.com/reactioncommerce/).
 
-## Templates
+## Theming
+
+### Overriding Templates
 
 Location of default templates:
 `~/.meteor/packages/reactioncommerce_core/0.9.2/web.browser/client/`
@@ -36,6 +38,15 @@ client/
         └── productSettings
 
 ```
+
+Default templates can be overridden by creating replacements in the project directory. Technically, it doesn't matter where you put them but it's recommended to keep the same file structure i.e. `/reaction/client/templates/`.
+
+### Styling
+
+There's a new theme, '10a', in `/reaction/client/themes/` that contains all of the [LESS](http://lesscss.org/) stylesheets.
+
+It's included after Bootstrap and the default styling so it can be overridden and all the variables can be accessed.
+
 
 ---
 
