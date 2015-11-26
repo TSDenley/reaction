@@ -4,7 +4,7 @@ E-commerce project based on [Reaction Commerce](https://github.com/reactioncomme
 
 ## Templates
 
-Location of default template:
+Location of default templates:
 `~/.meteor/packages/reactioncommerce_core/0.9.2/web.browser/client/`
 
 ```
