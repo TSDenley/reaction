@@ -2,9 +2,40 @@
 
 E-commerce project based on [Reaction Commerce](https://github.com/reactioncommerce/).
 
-## Useful
+## Templates
 
-- Location of default template `~/.meteor/packages/reactioncommerce_core/0.9.2/web.browser/client/`
+Location of default template:
+`~/.meteor/packages/reactioncommerce_core/0.9.2/web.browser/client/`
+
+```
+client/
+├── helpers
+└── templates
+    ├── cart
+    │   ├── cartDrawer
+    │   ├── cartIcon
+    │   ├── cartPanel
+    │   └── checkout
+    ├── dashboard
+    │   ├── console
+    │   ├── orders
+    │   ├── packages
+    │   ├── settings
+    │   └── shop
+    ├── layout
+    │   ├── alerts
+    │   ├── footer
+    │   ├── header
+    │   ├── loading
+    │   ├── notFound
+    │   └── notice
+    └── products
+        ├── productDetail
+        ├── productGrid
+        ├── productList
+        └── productSettings
+
+```
 
 ## From the Official README.md
 
