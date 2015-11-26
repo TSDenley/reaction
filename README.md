@@ -37,6 +37,8 @@ client/
 
 ```
 
+---
+
 ## From the Official README.md
 
 Reaction is a modern reactive, real-time event driven ecommerce platform.
