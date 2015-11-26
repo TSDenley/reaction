@@ -1,5 +1,6 @@
 /**
-* Override header template
+* Override header template. See `./header.html`
 */
 
-// Template.header.replaces('layoutHeader');
+Template.header.replaces('layoutHeader');
+Template.newHeaderBrand.replaces('headerBrand');
