@@ -4,7 +4,7 @@
  * ReactionCore common/routing.js contains the core routes.
  */
 
-let staticPages = ["about", "team", "faqs", "terms", "privacy" ];
+let staticPages = ["about", "team", "faqs", "terms", "privacy", "newPage" ];
 
 /**
  * app router mapping

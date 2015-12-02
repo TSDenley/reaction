@@ -47,6 +47,18 @@ There's a new theme, '10a', in `/reaction/client/themes/` that contains all of t
 
 It's included after Bootstrap and the default styling so it can be overridden and all the variables can be accessed.
 
+### Static pages
+
+__Static pages are located in `/reaction/client/templates/static/`.__
+
+To add new static pages:
+    - Add the new template.
+    - Modify the array in `/reaction/common/routing.js` to include the name of the new static page template.
+    - [Iron router's "pathFor" helper](http://iron-meteor.github.io/iron-router/#pathfor) can be used to create a link (see `/reaction/client/templates/layout/footer/footer.html`). E.g.:
+
+```
+<a href="{{pathFor 'newPage'}}">New Page</a>
+```
 
 ---
 
