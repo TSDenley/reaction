@@ -6,8 +6,8 @@ E-commerce project based on [Reaction Commerce](https://github.com/reactioncomme
 
 ### Overriding Templates
 
-Location of default templates:
-`~/.meteor/packages/reactioncommerce_core/0.9.2/web.browser/client/`
+__Location of default templates:
+`~/.meteor/packages/reactioncommerce_core/0.9.2/web.browser/client/`__
 
 ```
 client/
@@ -60,6 +60,11 @@ To add new static pages:
 ```
 <a href="{{pathFor 'newPage'}}">New Page</a>
 ```
+
+
+### Issues
+
+Regarding `WARN core: Open Exchange Rates AppId not configured. Configure for current rates`. Looks like we need an API key from [here] (https://openexchangerates.org/signup/free)? Is this a requirement if we are only using I form of currency?
 
 ---
 
