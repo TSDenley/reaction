@@ -6,8 +6,11 @@ E-commerce project based on [Reaction Commerce](https://github.com/reactioncomme
 
 ### Overriding Templates
 
-__Location of default templates:
-`~/.meteor/packages/reactioncommerce_core/0.9.2/web.browser/client/`__
+__Location of default templates (Linux, Mac):
+`~/.meteor/packages/reactioncommerce_core/0.9.2/web.browser/client/`
+
+in Windows:
+`C:\Users\[YourUser]\AppData\Local\.meteor\packages\reactioncommerce_core\0.9.2\web.browser\client\`__
 
 ```
 client/

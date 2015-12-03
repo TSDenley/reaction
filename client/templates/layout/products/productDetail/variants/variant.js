@@ -13,6 +13,7 @@ Template.variant.helpers({
 
 	/**
 	* Change stock level "progress bar" class when stock level changes
+	* (overrides core helper)
 	*/
 	progressBar() {
 		if ( this.inventoryPercentage <= 10 ) {
@@ -30,11 +31,15 @@ Template.variant.helpers({
 /**
 * Events
 */
-Template.variant.events({
 
-	// An event to test overriding events
-	'click .test-event'() {
-		alert('Test event!');
-	}
-
-});
+/**
+* Example event binding
+*/
+// Template.variant.events({
+//
+// 	// An event to test overriding events
+// 	'click .test-event'() {
+// 		alert('Test event!');
+// 	}
+//
+// });
