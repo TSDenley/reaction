@@ -21,9 +21,12 @@ Router.map(function route() {
   _.extend(Router.routes.index.options, {
     template: 'homepage',
     data: function() {
+      const showTagId = '6SzYLFCbQvh7WduCy';
+
       return {
+        showTag: Tags.findOne({ _id: showTagId }),
         showProducts: Products.find({
-          hashtags: '6SzYLFCbQvh7WduCy' // ID of tag
+          hashtags: showTagId
         }).fetch()
       };
     },
