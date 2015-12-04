@@ -1,21 +1,36 @@
 <template name="header">
-
-	<div class="container-fluid">
-		<nav class="nav" role="navigation">
-
-			<div class="row navbar-shop">
-
-				<div class="navbar-brand">{{> newHeaderBrand}}</div>
-
-				<div class="navbar-cart">{{> cartIcon}}</div>
-				<div class="cart-alert">{{> cartPanel}}</div>
-
-				<div class="navbar-accounts">{{> accounts tpl="loginDropdown"}}</div>
-				<div class="navbar-languages hidden-xs">{{> i18nChooser}}</div>
-
+	<!-- @todo If statment to show on home page only -->
+	<div class="carousel">
+		<div class="slide" style="background-image: url();">
+			<div class="container-fluid">
+				<h2 class="slide-title">Showing</h2>
+				<h1>10A Prints<br>Launch Show</h1>
+				<p>Letterpress and digital prints by the design and development team at 10A Prints</p>
+				<!-- @todo link to page -->
+				<a href="" class="btn btn-sm btn-10a">View</a>
 			</div>
-
-		</nav>
+		</div>
+		<div class="slide" style="background-image: url();">
+			<div class="container-fluid">
+				<h1 class="slide-title">Featured Artist</h1>
+				<h2>Matt Fawkes</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+				<!-- @todo link to page -->
+				<a href="" class="btn btn-sm btn-10a">View</a>
+			</div>
+		</div>
+		<div class="slide" style="background-image: url();">
+			<div class="container-fluid">
+				<h1 class="slide-title">Featured Artist</h1>
+				<h2>Matt Fawkes</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+				<!-- @todo link to page -->
+				<a href="" class="btn btn-sm btn-10a">View</a>
+			</div>
+		</div>
 	</div>
-
+	<!-- @todo else -->
+	<div class="page-header" style="background-image: url();">
+		<h1><!-- @todo Show tag title --></h1>
+	</div>
 </template>
