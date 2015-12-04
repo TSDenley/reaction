@@ -6,6 +6,27 @@
 
 let staticPages = [ 'showing', 'prints', 'artists' ];
 
+
+// let ShopController = RouteController.extend({
+//   onAfterAction: function () {
+//     return ReactionCore.MetaData.refresh(this.route, this.params);
+//   },
+//   yieldTemplates: {
+//     layoutHeader: {
+//       to: "layoutHeader"
+//     },
+//     layoutFooter: {
+//       to: "layoutFooter"
+//     },
+//     dashboard: {
+//       to: "dashboard"
+//     }
+//   }
+// });
+//
+// this.ShopController = ShopController;
+
+
 /**
  * app router mapping
  */
@@ -18,19 +39,11 @@ Router.map(function route() {
   }
 
   // TODO: replace home route
-	// this.route("home", {
-  //   controller: ShopController,
-  //   path: "/",
-  //   name: "home",
-  //   template: "products",
-	// 	data: {
-	// 		test: true
-	// 	},
-  //   waitOn: function () {
-  //     return this.subscribe("Products", Session.get("productScrollLimit"));
-  //     console.log(this.data);
-  //   }
-  // });
+
+  _.extend(Router.routes.index.options, {
+    template: 'home'
+  });
+
 
   return this.route("notFound", {
     path: "/(.*)"
