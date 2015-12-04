@@ -19,7 +19,15 @@ Router.map(function route() {
 
   // Replace 'index' template with 'static/home'
   _.extend(Router.routes.index.options, {
-    template: 'homepage'
+    template: 'homepage',
+    data: function() {
+      return {
+        showProducts: Products.find({
+          hashtags: '6SzYLFCbQvh7WduCy' // ID of tag
+        }).fetch()
+      };
+    },
+
   });
 
   return this.route("notFound", {
