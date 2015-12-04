@@ -21,7 +21,7 @@ Router.map(function route() {
   _.extend(Router.routes.index.options, {
     template: 'homepage',
     data: function() {
-      const showTagId = '6SzYLFCbQvh7WduCy';
+      const showTagId = 'tm6ZME5p8ze28yoe7';
 
       return {
         showTag: Tags.findOne({ _id: showTagId }),
