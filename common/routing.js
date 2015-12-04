@@ -4,7 +4,7 @@
  * ReactionCore common/routing.js contains the core routes.
  */
 
-let staticPages = [ 'showing', 'prints', 'artists' ];
+let staticPages = [ 'showing', 'artists' ];
 
 /**
  * app router mapping
@@ -30,7 +30,15 @@ Router.map(function route() {
         }).fetch()
       };
     },
+  });
 
+  this.route('prints', {
+    path: '/prints',
+    name: 'prints',
+    template: "products",
+    waitOn: function () {
+      return this.subscribe("Products", Session.get("productScrollLimit"));
+    }
   });
 
   return this.route("notFound", {
