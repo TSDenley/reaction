@@ -1,6 +1,6 @@
 {
   "ROOT_URL": "",
-  "MONGO_URL": "",
+  "MONGO_URL": "mongodb://gallery_user:oeMhr49cquUg@waffle.modulusmongo.net:27017/ga9rixaX",
   "MAIL_URL": "",
   "reaction": {
     "REACTION_USER": "",
