@@ -36,6 +36,7 @@ Router.map(function route() {
     path: '/prints',
     name: 'prints',
     template: "products",
+    controller: ShopController,
     waitOn: function () {
       return this.subscribe("Products", Session.get("productScrollLimit"));
     }
