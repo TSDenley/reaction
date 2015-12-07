@@ -1,38 +1,89 @@
-/**
-* Header/Branding/Nav styling
-*/
+main{
+    padding: 0;
 
-.navbar-shop,
-.navbar-default {
-	background-color: #fff;
-	border: none;
-
-	&,
-	a, a:hover,
-	.dropdown-toggle,
-	.navbar-brand {
-		color: @text-color;
-	}
+    .container-main{
+        padding: 10px;
+    }
 }
 
-.navbar-languages:hover,
-.navbar-accounts:hover {
-	background-color: @gray-lighter;
+.swiper-container{
+    .swiper-slide{
+        background-color: @black;
+        padding: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 330px;
+
+        &.slide-1{
+            background-image: url('/resources/images/your-beating-heart.jpg');
+        }
+
+        &.slide-2{
+            background-image: url('/resources/images/moe-sweetheart.jpg');
+        }
+
+        &.slide-3{
+            background-image: url('/resources/images/Radii,Radio.jpg');
+        }
+
+        &.slide-4{
+            background-image: url('/resources/images/breeze.jpg');
+        }
+
+        h1, h2, p, a{
+            color: @white;
+        }
+
+        a{
+            text-transform: uppercase;
+            border: 1px solid @white;
+            border-radius: 0;
+            display: inline-block;
+            padding: 5px 30px;
+            font-size: 16px;
+        }
+
+        h1{
+            font-size: 29px;
+            text-transform: uppercase;
+            margin-top: 0;
+            line-height: 1.25em;
+            margin-bottom: 16px;
+        }
+
+        h2{
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        p{
+            font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+    }
+
+    .swiper-pagination-bullet{
+        background-color: rgba(255,255,255,0.75);
+    }
 }
 
-.cart-icon {
-	background-color: @gray-light;
-	margin: 0 !important;
+.page-header{
+    background-color: @black;
+    color: @white;
+    padding: 20px 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 0;
 
-	.badge {
-		background-color: @gray;
-	}
-
-	&:hover {
-		background-color: @gray;
-
-		.badge {
-			background-color: @gray-dark;
-		}
-	}
+    h1{
+        color: @white;
+        font-size: 29px;
+        text-transform: uppercase;
+        margin: 0;
+    }
 }

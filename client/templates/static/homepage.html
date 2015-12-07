@@ -1,0 +1,70 @@
+<template name="homepage">
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide-1">
+                <h2 class="slide-title">Showing</h2>
+                <h1>10A Prints<br>Launch Show</h1>
+                <p>Letterpress and digital prints by the design and development team at 10A Prints</p>
+                <!-- @todo link to page -->
+                <a href="" class="btn btn-sm btn-10a">View</a>
+            </div>
+            <div class="swiper-slide slide-2">
+                <h2 class="slide-title">Featured Artist</h2>
+                <h1>Matt Fawkes</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                <!-- @todo link to page -->
+                <a href="" class="btn btn-sm btn-10a">View</a>
+            </div>
+            <div class="swiper-slide slide-3">
+                <h2 class="slide-title">Featured Print</h2>
+                <h1>Lorem ipsum</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                <!-- @todo link to page -->
+                <a href="" class="btn btn-sm btn-10a">View</a>
+            </div>
+            <div class="swiper-slide slide-4">
+                <h2 class="slide-title">Another slide</h2>
+                <h1>Lorem ipsum</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                <!-- @todo link to page -->
+                <a href="" class="btn btn-sm btn-10a">View</a>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+	<div class="container-main">
+	    <div class="row">
+	        <div class="col-sm-12">
+
+                {{#if currentUser}}
+                    {{> accounts tpl="loginDropdown"}}
+                {{/if}}
+
+	            <h3 class="static-label">Current Show</h3>
+
+                <h2 class="show-tag-title">{{showTag.name}}</h2>
+
+                {{#each showProducts}}
+                    {{#if isVisible}}
+                        <div class="show-print">
+                            <h3 class="show-product-title">{{title}}</h3>
+
+                            <div class="product-primary-images show-product-images">
+                                {{#with media}}
+                                    <div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
+                                {{else}}
+                                  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
+                                {{/with}}
+                            </div>
+
+                            <hr>
+                        </div>
+                    {{/if}}
+                {{/each}}
+	        </div>
+	    </div>
+	</div>
+
+</template>

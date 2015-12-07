@@ -1,0 +1,38 @@
+/**
+* Header/Branding/Nav styling
+*/
+
+.navbar-shop,
+.navbar-default {
+	background-color: #fff;
+	border: none;
+
+	&,
+	a, a:hover,
+	.dropdown-toggle,
+	.navbar-brand {
+		color: @text-color;
+	}
+}
+
+.navbar-languages:hover,
+.navbar-accounts:hover {
+	background-color: @gray-lighter;
+}
+
+.cart-icon {
+	background-color: @gray-light;
+	margin: 0 !important;
+
+	.badge {
+		background-color: @gray;
+	}
+
+	&:hover {
+		background-color: @gray;
+
+		.badge {
+			background-color: @gray-dark;
+		}
+	}
+}

@@ -110,6 +110,7 @@ mongo-livedata@1.0.9
 mquandalle:bower@1.5.2_1
 nemo64:bootstrap@3.3.5_2
 nemo64:bootstrap-data@3.3.5
+nolimits4web:swiper@3.2.6
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 npm-node-aes-gcm@0.1.3_6
@@ -154,6 +155,7 @@ templating@1.1.4
 templating-tools@1.0.0
 tracker@1.0.9
 twitter@1.1.5
+udondan:slick@1.3.11_1
 ui@1.0.8
 underscore@1.0.4
 underscorestring:underscore.string@3.2.2
