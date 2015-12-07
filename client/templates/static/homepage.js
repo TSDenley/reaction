@@ -1,5 +1,15 @@
+/**
+* Home page
+* Replaces the 'shop' view
+*/
+
+/**
+* Helper methods
+*/
 Template.homepage.helpers({
-  media: function () {
+
+	// Used to get print images
+  media() {
     let defaultImage;
     let variantId;
     let variants = [];
@@ -20,4 +30,5 @@ Template.homepage.helpers({
     }
     return false;
   }
+
 });
