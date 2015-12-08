@@ -64,6 +64,22 @@ To add new static pages:
 <a href="{{pathFor 'newPage'}}">New Page</a>
 ```
 
+## Device config
+
+### Building on iOS Device
+
+http://bouk.co/blog/sideload-iphone/
+
+### Official Docs
+
+https://developer.apple.com/library/mac/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html
+
+### mobile-config.js
+
+[Editing mobile-config.js](https://docs.meteor.com/#/full/mobileconfigjs)
+
+[http://stackoverflow.com/questions/29279287/in-meteor-app-how-to-add-orgin-in-cordova-config-xml](http://stackoverflow.com/questions/29279287/in-meteor-app-how-to-add-orgin-in-cordova-config-xml)
+
 
 ### Issues
 
