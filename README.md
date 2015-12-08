@@ -77,7 +77,7 @@ https://developer.apple.com/library/mac/documentation/IDEs/Conceptual/AppDistrib
 [http://stackoverflow.com/questions/29279287/in-meteor-app-how-to-add-orgin-in-cordova-config-xml](http://stackoverflow.com/questions/29279287/in-meteor-app-how-to-add-orgin-in-cordova-config-xml)
 
 
-### Issues
+## Issues
 
 Regarding `WARN core: Open Exchange Rates AppId not configured. Configure for current rates`. Looks like we need an API key from [here] (https://openexchangerates.org/signup/free)? Is this a requirement if we are only using 1 form of currency?
 
