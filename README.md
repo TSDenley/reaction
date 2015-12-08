@@ -66,11 +66,7 @@ To add new static pages:
 
 ## Device config
 
-### Building on iOS Device
-
-http://bouk.co/blog/sideload-iphone/
-
-### Official Docs
+### Launching on iOS - Official Docs
 
 https://developer.apple.com/library/mac/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html
 
