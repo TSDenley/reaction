@@ -6,11 +6,11 @@ E-commerce project based on [Reaction Commerce](https://github.com/reactioncomme
 
 ### Overriding Templates
 
-__Location of default templates (Linux, Mac):
-`~/.meteor/packages/reactioncommerce_core/0.9.2/web.browser/client/`
+__Location of default templates (Linux, Mac):__
+__`~/.meteor/packages/reactioncommerce_core/0.9.2/web.browser/client/`__
 
-in Windows:
-`C:\Users\[YourUser]\AppData\Local\.meteor\packages\reactioncommerce_core\0.9.2\web.browser\client\`__
+__in Windows:__
+__`C:\Users\[YourUser]\AppData\Local\.meteor\packages\reactioncommerce_core\0.9.2\web.browser\client\`__
 
 ```
 client/
@@ -67,7 +67,7 @@ To add new static pages:
 
 ### Issues
 
-Regarding `WARN core: Open Exchange Rates AppId not configured. Configure for current rates`. Looks like we need an API key from [here] (https://openexchangerates.org/signup/free)? Is this a requirement if we are only using 1 form of currency?
+- Regarding `WARN core: Open Exchange Rates AppId not configured. Configure for current rates`. Looks like we need an API key from [here] (https://openexchangerates.org/signup/free)? Is this a requirement if we are only using 1 form of currency?
 
 ---
 
