@@ -1,12 +1,14 @@
 if (Meteor.isClient) {
   Template.homepage.rendered = function() {
-    // $('#carousel').slick({
-    //   dots: true,
-    //   arrows: true
-    // });
 
-    var swiper = new Swiper('.swiper-container', {
+		// Main swiper
+    let swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination'
     });
+
+    // Current show swiper
+		let showSwiper = new Swiper('.show-swiper-container', {
+			// options
+		});
   }
 }
