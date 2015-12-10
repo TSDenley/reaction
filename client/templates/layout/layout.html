@@ -4,7 +4,15 @@
 </head>
 
 <template name="layout">
-	<span id="layout-alerts">{{>bootstrapAlerts}}</span>
-	{{> yield}}
+	<nav class="reaction-navigation-header">{{> yield region="layoutHeader"}}</nav>
+	<nav class="reaction-cart-drawer">{{>cartDrawer}}</nav>
+	<div class="reaction-dashboard-drawer">{{> yield region="dashboard"}}</div>
+
+
+	<main>
+		<span id="layout-alerts">{{>bootstrapAlerts}}</span>
+		{{> yield}}
+	</main>
+
 	<footer class="reaction-navigation-footer">{{>yield region="layoutFooter"}}</footer>
 </template>
