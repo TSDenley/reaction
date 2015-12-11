@@ -22,6 +22,27 @@ App.icons({
 	android_mdpi: 'icons/10a-prints-logo.svg',
 	android_hdpi: 'icons/10a-prints-logo.svg',
 	android_xhdpi: 'icons/10a-prints-logo.svg'
-})
+});
+
+App.launchScreens({
+	iphone: 'icons/10a-prints-logo.svg',
+	iphone_2x: 'icons/10a-prints-logo.svg',
+	iphone5: 'icons/10a-prints-logo.svg',
+	iphone6: 'icons/10a-prints-logo.svg',
+	iphone6p_portrait: 'icons/10a-prints-logo.svg',
+	iphone6p_landscape: 'icons/10a-prints-logo.svg',
+	ipad_portrait: 'icons/10a-prints-logo.svg',
+	ipad_portrait_2x: 'icons/10a-prints-logo.svg',
+	ipad_landscape: 'icons/10a-prints-logo.svg',
+	ipad_landscape_2x: 'icons/10a-prints-logo.svg',
+	android_ldpi_portrait: 'icons/10a-prints-logo.svg',
+	android_ldpi_landscape: 'icons/10a-prints-logo.svg',
+	android_mdpi_portrait: 'icons/10a-prints-logo.svg',
+	android_mdpi_landscape: 'icons/10a-prints-logo.svg',
+	android_hdpi_portrait: 'icons/10a-prints-logo.svg',
+	android_hdpi_landscape: 'icons/10a-prints-logo.svg',
+	android_xhdpi_portrait: 'icons/10a-prints-logo.svg',
+	android_xhdpi_landscape: 'icons/10a-prints-logo.svg'
+});
 
 App.accessRule('*');
