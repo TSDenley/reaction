@@ -6,6 +6,8 @@
 
 let staticPages = [ 'artists' ];
 
+const showTagId = 'tm6ZME5p8ze28yoe7'; // Hardcoded tag ID
+
 /**
  * app router mapping
  */
@@ -34,8 +36,6 @@ Router.map(function route() {
     },
 
     data: function() {
-      const showTagId = 'tm6ZME5p8ze28yoe7'; // Hardcoded tag ID
-
       return {
         showTag: Tags.findOne({ _id: showTagId }),
         showProducts: Products.find({
@@ -76,10 +76,23 @@ Router.map(function route() {
       onStop: function() {
         $('body').removeClass('hide-header');
       },
+      data: function() {
+        return {
+          showTag: Tags.findOne({ _id: showTagId }),
+          showProducts: Products.find({
+            hashtags: showTagId
+          }).fetch(),
+  				// homeSlides: home_slides.find().fetch()
+        };
+
+    },
     path: '/showing',
     name: 'showing',
     template: 'showing',
-    controller: ShopController
+    controller: ShopController,
+    waitOn: function () {
+      return this.subscribe("Products", Session.get("productScrollLimit"));
+    }
   });
 
 

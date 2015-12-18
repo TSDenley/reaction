@@ -3,9 +3,41 @@
 		<h1>10A Prints Launch Show</h1>
 	</div>
 
-  <div class="container">
-    <div class="row">
-      <h2>This is the "showing" page</h2>
+    <div class="container-main">
+        <div class="row">
+            <div class="col-sm-12">
+
+                {{#if currentUser}}
+                    {{> accounts tpl="loginDropdown"}}
+                {{/if}}
+
+                <h3 class="static-label">Current Show</h3>
+
+                <h2 class="show-tag-title">{{showTag.name}}</h2>
+
+                <div class="show-swiper-container">
+                    <div class="swiper-wrapper">
+
+                        {{#each showProducts}}
+                            {{#if isVisible}}
+                                <div class="show-print swiper-slide">
+                                    <div class="product-primary-images show-product-images">
+                                        {{#with media}}
+                                            <div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
+                                        {{else}}
+                                          <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
+                                        {{/with}}
+                                    </div>
+                                    <h3 class="show-product-title">Artist Name</h3>
+                                    <p><em>{{title}}</em> 2015</p>
+                                    <p>Letterpress Print</p>
+                                </div>
+                            {{/if}}
+                        {{/each}}
+
+                    </div>
+                </div><!-- .show-swiper-container -->
+            </div>
+        </div>
     </div>
-  </div>
 </template>
