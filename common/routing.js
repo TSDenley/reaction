@@ -21,12 +21,12 @@ Router.map(function route() {
     });
   }
 
+
   // Replace 'index' template with 'static/home'
   _.extend(Router.routes.index.options, {
+
     template: 'homepage',
-    // waitOn: function () {
-    //   return this.subscribe("Slides");
-    // },
+
     data: function() {
       const showTagId = 'tm6ZME5p8ze28yoe7'; // Hardcoded tag ID
 
@@ -34,11 +34,18 @@ Router.map(function route() {
         showTag: Tags.findOne({ _id: showTagId }),
         showProducts: Products.find({
           hashtags: showTagId
-      }).fetch(),
-        showSlides: Slides.find().fetch()
+        }).fetch(),
+				homeSlides: homes_slides.find().fetch()
       };
+
     },
+
+		waitOn: function () {
+      this.subscribe("homes_slides", Session.get("productScrollLimit"));
+      this.subscribe("Products", Session.get("productScrollLimit"));
+    }
   });
+
 
   this.route('prints', {
     path: '/prints',
