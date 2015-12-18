@@ -6,6 +6,10 @@
 
 let staticPages = [ 'showing', 'artists' ];
 
+var Slides = new Mongo.Collection('home_slides');
+
+console.log(Slides.find().fetch());
+
 /**
  * app router mapping
  */
@@ -20,6 +24,9 @@ Router.map(function route() {
   // Replace 'index' template with 'static/home'
   _.extend(Router.routes.index.options, {
     template: 'homepage',
+    // waitOn: function () {
+    //   return this.subscribe("Slides");
+    // },
     data: function() {
       const showTagId = 'tm6ZME5p8ze28yoe7'; // Hardcoded tag ID
 
@@ -27,7 +34,8 @@ Router.map(function route() {
         showTag: Tags.findOne({ _id: showTagId }),
         showProducts: Products.find({
           hashtags: showTagId
-        }).fetch()
+      }).fetch(),
+        showSlides: Slides.find().fetch()
       };
     },
   });
