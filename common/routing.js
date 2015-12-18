@@ -25,12 +25,12 @@ Router.map(function route() {
     template: 'homepage',
 
     onBeforeAction: function() {
-      $('body').addClass('home-page');
+      $('body').addClass('hide-header');
       this.next();
     },
 
     onStop: function() {
-      $('body').removeClass('home-page');
+      $('body').removeClass('hide-header');
     },
 
     data: function() {
@@ -68,6 +68,14 @@ Router.map(function route() {
 
 
   this.route('showing', {
+      onBeforeAction: function() {
+        $('body').addClass('hide-header');
+        this.next();
+      },
+
+      onStop: function() {
+        $('body').removeClass('hide-header');
+      },
     path: '/showing',
     name: 'showing',
     template: 'showing',
