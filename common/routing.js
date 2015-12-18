@@ -4,16 +4,13 @@
  * ReactionCore common/routing.js contains the core routes.
  */
 
-let staticPages = [ 'showing', 'artists' ];
-
-var Slides = new Mongo.Collection('home_slides');
-
-console.log(Slides.find().fetch());
+let staticPages = [ 'artists' ];
 
 /**
  * app router mapping
  */
 Router.map(function route() {
+
   for (let page of staticPages) {
     this.route(page, {
       controller: ShopController,
@@ -27,6 +24,15 @@ Router.map(function route() {
 
     template: 'homepage',
 
+    onBeforeAction: function() {
+      $('body').addClass('home-page');
+      this.next();
+    },
+
+    onStop: function() {
+      $('body').removeClass('home-page');
+    },
+
     data: function() {
       const showTagId = 'tm6ZME5p8ze28yoe7'; // Hardcoded tag ID
 
@@ -35,15 +41,18 @@ Router.map(function route() {
         showProducts: Products.find({
           hashtags: showTagId
         }).fetch(),
-				homeSlides: homes_slides.find().fetch()
+				// homeSlides: home_slides.find().fetch()
       };
 
     },
 
-		waitOn: function () {
-      this.subscribe("homes_slides", Session.get("productScrollLimit"));
-      this.subscribe("Products", Session.get("productScrollLimit"));
-    }
+    // @TODO: get home slides from DB collection and send to template
+
+		// waitOn: function () {
+    //   this.subscribe("home_slides", Session.get("productScrollLimit"));
+    //   this.subscribe("Products", Session.get("productScrollLimit"));
+    // }
+
   });
 
 
@@ -57,7 +66,16 @@ Router.map(function route() {
     }
   });
 
+
+  this.route('showing', {
+    path: '/showing',
+    name: 'showing',
+    template: ''
+  });
+
+
   return this.route("notFound", {
     path: "/(.*)"
   });
+
 });
