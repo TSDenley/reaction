@@ -28,7 +28,7 @@ Router.map(function route() {
         showTag: Tags.findOne({ _id: showTagId }),
         showProducts: Products.find({
           hashtags: showTagId
-        }).fetch();
+      }).fetch()
       };
     },
   });
