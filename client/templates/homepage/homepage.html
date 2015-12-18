@@ -53,8 +53,6 @@
 		                {{#each showProducts}}
 		                    {{#if isVisible}}
 		                        <div class="show-print swiper-slide">
-		                            <h3 class="show-product-title">{{title}}</h3>
-
 		                            <div class="product-primary-images show-product-images">
 		                                {{#with media}}
 		                                    <div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
@@ -62,6 +60,9 @@
 		                                  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
 		                                {{/with}}
 		                            </div>
+                                    <h3 class="show-product-title">Artist Name</h3>
+                                    <p><em>{{title}}</em> 2015</p>
+                                    <p>Letterpress Print</p>
 		                        </div>
 		                    {{/if}}
 		                {{/each}}
@@ -74,11 +75,9 @@
                 <div class="show-swiper-container">
 					<div class="swiper-wrapper">
 
-		                {{#each showProducts}}
+                        {{#each showProducts}}
 		                    {{#if isVisible}}
 		                        <div class="show-print swiper-slide">
-		                            <h3 class="show-product-title">{{title}}</h3>
-
 		                            <div class="product-primary-images show-product-images">
 		                                {{#with media}}
 		                                    <div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
@@ -86,6 +85,9 @@
 		                                  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
 		                                {{/with}}
 		                            </div>
+                                    <h3 class="show-product-title">Artist Name</h3>
+                                    <p><em>{{title}}</em> 2015</p>
+                                    <p>Letterpress Print</p>
 		                        </div>
 		                    {{/if}}
 		                {{/each}}
