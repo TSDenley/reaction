@@ -71,6 +71,30 @@
 					</div>
 				</div><!-- .show-swiper-container -->
 
+                <h2 class="show-tag-title">Artists</h2>
+
+                <div class="show-swiper-container">
+					<div class="swiper-wrapper">
+
+		                {{#each showProducts}}
+		                    {{#if isVisible}}
+		                        <div class="show-print swiper-slide">
+		                            <h3 class="show-product-title">{{title}}</h3>
+
+		                            <div class="product-primary-images show-product-images">
+		                                {{#with media}}
+		                                    <div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
+		                                {{else}}
+		                                  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
+		                                {{/with}}
+		                            </div>
+		                        </div>
+		                    {{/if}}
+		                {{/each}}
+
+					</div>
+				</div><!-- .show-swiper-container -->
+
 	        </div>
 	    </div>
 	</div>
