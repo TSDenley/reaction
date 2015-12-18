@@ -36,22 +36,24 @@ Router.map(function route() {
     },
 
     data: function() {
+      console.log(home_slides.find().fetch());
+
       return {
         showTag: Tags.findOne({ _id: showTagId }),
         showProducts: Products.find({
           hashtags: showTagId
         }).fetch(),
-				// homeSlides: home_slides.find().fetch()
+				homeSlides: home_slides.find().fetch()
       };
 
     },
 
     // @TODO: get home slides from DB collection and send to template
 
-		// waitOn: function () {
-    //   this.subscribe("home_slides", Session.get("productScrollLimit"));
-    //   this.subscribe("Products", Session.get("productScrollLimit"));
-    // }
+		waitOn: function () {
+      this.subscribe("home_slides", Session.get("productScrollLimit"));
+      this.subscribe("Products", Session.get("productScrollLimit"));
+    }
 
   });
 

@@ -36,6 +36,14 @@
 
 
 	<div class="container-main">
+        {{#if homeSlides}}
+            <div class="row">
+                {{#each homeSlides}}
+                    <h2>{{{title}}}</h2>
+                {{/each}}
+            </div>
+        {{/if}}
+
 	    <div class="row">
 	        <div class="col-sm-12">
 
