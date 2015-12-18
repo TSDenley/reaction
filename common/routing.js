@@ -70,7 +70,8 @@ Router.map(function route() {
   this.route('showing', {
     path: '/showing',
     name: 'showing',
-    template: ''
+    template: 'showing',
+    controller: ShopController
   });
 
 
