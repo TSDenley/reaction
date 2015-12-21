@@ -3,16 +3,14 @@
 * @url: http://docs.meteor.com/#/full/mobileconfigjs
 */
 
-/*
 App.info({
-	id: 'com.10adigital.uk', // Need to be a specfic ID?
+	// id: 'com.10adigital.uk', // Need to be a specfic ID?
 	name: '10A Digital',
 	description: '10A Digital Prints',
 	author: '10A Digital',
 	email: 'info@10adigital.uk',
 	website: 'http://10adigital.uk'
 });
-*/
 
 App.icons({
   "iphone": "resources/icons/iphone.png", // 60x60
