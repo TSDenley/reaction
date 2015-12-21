@@ -4,7 +4,7 @@
 
 HomeSlides = new SimpleSchema({
 	"item" : {
-		label: "item",
+		label: "Item",
 		type: String
 	},
 	"title" : {

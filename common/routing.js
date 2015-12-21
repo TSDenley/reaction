@@ -51,7 +51,7 @@ Router.map(function route() {
     // @TODO: get home slides from DB collection and send to template
 
 		waitOn: function () {
-      this.subscribe("home_slides", Session.get("productScrollLimit"));
+      this.subscribe("home_slides");
       this.subscribe("Products", Session.get("productScrollLimit"));
     }
 
