@@ -29,6 +29,10 @@ Template.homepage.helpers({
       return defaultImage;
     }
     return false;
-  }
+  },
+
+	slideImgPath() {
+		return '/resources/images/';
+	}
 
 });

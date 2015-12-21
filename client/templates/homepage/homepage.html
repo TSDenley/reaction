@@ -1,50 +1,25 @@
 <template name="homepage">
 
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide slide-1">
-                <h2 class="slide-title">Showing</h2>
-                <h1>10A Prints<br>Launch Show</h1>
-                <p>Letterpress and digital prints by the design and development team at 10A Prints</p>
-                <!-- @todo link to page -->
-                <a href="" class="btn btn-sm btn-10a">View</a>
-            </div>
-            <div class="swiper-slide slide-2">
-                <h2 class="slide-title">Featured Artist</h2>
-                <h1>Matt Fawkes</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
-                <!-- @todo link to page -->
-                <a href="" class="btn btn-sm btn-10a">View</a>
-            </div>
-            <div class="swiper-slide slide-3">
-                <h2 class="slide-title">Featured Print</h2>
-                <h1>Lorem ipsum</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
-                <!-- @todo link to page -->
-                <a href="" class="btn btn-sm btn-10a">View</a>
-            </div>
-            <div class="swiper-slide slide-4">
-                <h2 class="slide-title">Another slide</h2>
-                <h1>Lorem ipsum</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
-                <!-- @todo link to page -->
-                <a href="" class="btn btn-sm btn-10a">View</a>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
+	{{#if homeSlides}}
+	    <div class="swiper-container">
+	        <div class="swiper-wrapper">
+
+				{{#each homeSlides}}
+		            <div class="swiper-slide slide-{{@index}}" style="background-image:url({{slideImgPath}}{{background_image}})">
+		                <h2 class="slide-title">{{subtitle}}</h2>
+		                <h1>{{{title}}}</h1>
+		                <p>{{strapline}}</p>
+		                <a href="{{cta_link}}" class="btn btn-sm btn-10a">{{cta_text}}</a>
+		            </div>
+				{{/each}}
+
+		        <div class="swiper-pagination"></div>
+			</div>
+	    </div>
+	{{/if}}
 
 
 	<div class="container-main">
-        {{#if homeSlides}}
-            <div class="row">
-                {{#each homeSlides}}
-                    <h2>{{{title}}}</h2>
-					<hr>
-                {{/each}}
-            </div>
-        {{/if}}
-
 	    <div class="row">
 	        <div class="col-sm-12">
 
