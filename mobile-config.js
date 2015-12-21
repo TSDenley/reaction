@@ -12,6 +12,11 @@ App.info({
 	website: 'http://10adigital.uk'
 });
 
+/**
+* Icons & splashes generator script
+* @url https://github.com/lpender/meteor-assets
+*/
+
 App.icons({
   "iphone": "resources/icons/iphone.png", // 60x60
   "iphone_2x": "resources/icons/iphone_2x.png", // 120x120
