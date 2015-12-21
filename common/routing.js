@@ -26,16 +26,16 @@ Router.map(function route() {
 
     template: 'homepage',
 
-    onBeforeAction: function() {
+    onBeforeAction() {
       $('body').addClass('hide-header');
       this.next();
     },
 
-    onStop: function() {
+    onStop() {
       $('body').removeClass('hide-header');
     },
 
-    data: function() {
+    data() {
       console.log(home_slides.find().fetch());
 
       return {
@@ -48,9 +48,7 @@ Router.map(function route() {
 
     },
 
-    // @TODO: get home slides from DB collection and send to template
-
-		waitOn: function () {
+		waitOn() {
       this.subscribe("home_slides");
       this.subscribe("Products", Session.get("productScrollLimit"));
     }
@@ -63,28 +61,27 @@ Router.map(function route() {
     name: 'prints',
     template: "products",
     controller: ShopController,
-    waitOn: function () {
+    waitOn() {
       return this.subscribe("Products", Session.get("productScrollLimit"));
     }
   });
 
 
   this.route('showing', {
-      onBeforeAction: function() {
+      onBeforeAction() {
         $('body').addClass('hide-header');
         this.next();
       },
 
-      onStop: function() {
+      onStop() {
         $('body').removeClass('hide-header');
       },
-      data: function() {
+      data() {
         return {
           showTag: Tags.findOne({ _id: showTagId }),
           showProducts: Products.find({
             hashtags: showTagId
-          }).fetch(),
-  				// homeSlides: home_slides.find().fetch()
+          }).fetch()
         };
 
     },
@@ -92,7 +89,7 @@ Router.map(function route() {
     name: 'showing',
     template: 'showing',
     controller: ShopController,
-    waitOn: function () {
+    waitOn() {
       return this.subscribe("Products", Session.get("productScrollLimit"));
     }
   });
