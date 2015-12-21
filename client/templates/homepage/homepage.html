@@ -6,15 +6,15 @@
 
 				{{#each homeSlides}}
 		            <div class="swiper-slide slide-{{@index}}" style="background-image:url({{slideImgPath}}{{background_image}})">
-		                <h2 class="slide-title">{{subtitle}}</h2>
-		                <h1>{{{title}}}</h1>
-		                <p>{{strapline}}</p>
-		                <a href="{{cta_link}}" class="btn btn-sm btn-10a">{{cta_text}}</a>
+		                <h2 class="h2 slide-subtitle ">{{subtitle}}</h2>
+		                <h1 class="h1 slide-title">{{{title}}}</h1>
+		                <p class="slide-caption">{{strapline}}</p>
+		                <a href="{{cta_link}}" class="slide-link btn btn-sm btn-10a">{{cta_text}}</a>
 		            </div>
 				{{/each}}
 
-		        <div class="swiper-pagination"></div>
 			</div>
+			<div class="swiper-pagination"></div>
 	    </div>
 	{{/if}}
 

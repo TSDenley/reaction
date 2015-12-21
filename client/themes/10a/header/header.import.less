@@ -20,8 +20,9 @@ main{
         border-radius: 50%;
     }
 
-    .back-button, .search-box{
-        .btn{
+    .back-button,
+    .search-box {
+        .btn {
             width: 34px;
             padding: 6px 10px;
             background-color: @black;
@@ -40,11 +41,14 @@ main{
         background-position: center center;
         min-height: 330px;
 
-        h1, h2, p, a{
+        .slide-title,
+        .slide-subtitle,
+        .slide-caption,
+        .slide-link {
             color: @white;
         }
 
-        a{
+        .slide-link {
             text-transform: uppercase;
             border: 1px solid @white;
             border-radius: 0;
@@ -53,29 +57,36 @@ main{
             font-size: 16px;
         }
 
-        h1{
+        .slide-title {
             font-size: 29px;
+            font-weight: bold;
             text-transform: uppercase;
             margin-top: 0;
             line-height: 1.25em;
             margin-bottom: 16px;
         }
 
-        h2{
+        .slide-subtitle {
             font-size: 15px;
             text-transform: uppercase;
             font-weight: bold;
             margin-bottom: 16px;
         }
 
-        p{
+        .slide-caption {
             font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
             font-size: 16px;
             margin-bottom: 16px;
         }
     }
 
-    .swiper-pagination-bullet{
+    // .swiper-pagination {
+    //     bottom: 10px;
+    // 	left: 0;
+    // 	width: 100%;
+    // }
+
+    .swiper-pagination-bullet {
         background-color: rgba(255,255,255,0.75);
     }
 }
