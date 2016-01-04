@@ -71,14 +71,14 @@ Router.map(function route() {
 		template: 'showing',
 		controller: ShopController,
 
-		onBeforeAction() {
-      $('body').addClass('hide-header');
-      this.next();
-    },
-
-    onStop() {
-      $('body').removeClass('hide-header');
-    },
+		// onBeforeAction() {
+    //   $('body').addClass('hide-header');
+    //   this.next();
+    // },
+		//
+    // onStop() {
+    //   $('body').removeClass('hide-header');
+    // },
 
     data() {
       return {
