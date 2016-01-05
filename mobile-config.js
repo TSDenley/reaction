@@ -4,7 +4,7 @@
 */
 
 App.info({
-	id: 'uk.10adigital.prints',
+	id: 'com.10adigital.prints',
 	name: '10A Digital',
 	description: '10A Digital Prints',
 	author: '10A Digital',
