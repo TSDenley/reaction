@@ -6,9 +6,7 @@ Template.header.replaces('layoutHeader');
 Template.newHeaderBrand.replaces('headerBrand');
 
 Template.layoutHeader.events({
-	'click .back-button a': function(event) {
-		event.preventDefault();
-		console.log('BACK');
+	'click .back-button a': function() {
 		history.back();
 	}
 });
