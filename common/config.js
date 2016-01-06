@@ -14,3 +14,10 @@ if (Meteor.isClient) {
   // sets default number of product displayed on a grid
   Session.setDefault("productScrollLimit", ITEMS_INCREMENT);
 }
+
+
+this.toTitleCase = function (str) {
+  return str.replace(/\w\S*/g, function(txt) {
+		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+	});
+}
