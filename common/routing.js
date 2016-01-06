@@ -51,7 +51,7 @@ Router.map(function route() {
           let meta = prints.metafields;
           for (let i = 0; i < meta.length; i++) {
             if ( meta[i].key === 'Artist' ) {
-              return meta[i].value;
+              return toTitleCase( meta[i].value );
             }
           }
         }))

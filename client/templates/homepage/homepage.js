@@ -8,7 +8,9 @@
 */
 Template.homepage.helpers({
 
-	// Used to get print images
+  /**
+  * Get print images
+  */
   media() {
     let defaultImage;
     let variantId;
@@ -45,10 +47,19 @@ Template.homepage.helpers({
 
 		for (let i = 0; i < meta.length; i++) {
 			if ( meta[i].key === 'Artist' ) {
-				return meta[i].value;
+				return toTitleCase( meta[i].value );
 			}
 		}
-	}
+	},
+
+  /**
+  * Returns the year print was created
+  * @param printID - string
+  */
+  printYear(printID) {
+    let print = Products.findOne({ _id: printID });
+    return moment(print.createdAt).format('YYYY');
+  }
 
 });
 
@@ -67,4 +78,5 @@ Template.homepage.onRendered(function(){
     spaceBetween: 20,
     freeMode: true
   });
+
 });
