@@ -44,8 +44,8 @@
 		                                  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
 		                                {{/with}}
 		                            </div>
-                                    <h3 class="show-product-title">{{printsArtistName _id}}</h3>
-                                    <p><em>{{title}}</em> {{printYear _id}}</p>
+                                    <h3 class="show-product-title">{{title}}</h3>
+                                    <p><em>{{printsArtistName _id}}</em> {{printYear _id}}</p>
                                     <p>{{description}}</p>
 		                        </div>
 		                    {{/if}}
@@ -57,7 +57,7 @@
                 <h2 class="show-tag-title">Artists</h2>
 
 				{{#each artist in artists}}
-					<h3>{{artist}}</h3>
+					<h3  class="show-product-title">{{artist}}</h3>
 				{{/each}}
 	        </div>
 	    </div>
