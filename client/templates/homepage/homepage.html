@@ -1,7 +1,7 @@
 <template name="homepage">
 
 	{{#if homeSlides}}
-	    <div class="swiper-container">
+	    <div class="swiper-container main-swiper-container">
 	        <div class="swiper-wrapper">
 
 				{{#each homeSlides}}
@@ -44,7 +44,7 @@
 		                                  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
 		                                {{/with}}
 		                            </div>
-                                    <h3 class="show-product-title">Artist Name</h3>
+                                    <h3 class="show-product-title">{{printsArtistName _id}}</h3>
                                     <p><em>{{title}}</em> 2015</p>
                                     <p>Letterpress Print</p>
 		                        </div>
@@ -56,29 +56,9 @@
 
                 <h2 class="show-tag-title">Artists</h2>
 
-                <div class="show-swiper-container">
-					<div class="swiper-wrapper">
-
-                        {{#each showProducts}}
-		                    {{#if isVisible}}
-		                        <div class="show-print swiper-slide">
-		                            <div class="product-primary-images show-product-images">
-		                                {{#with media}}
-		                                    <div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
-		                                {{else}}
-		                                  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
-		                                {{/with}}
-		                            </div>
-                                    <h3 class="show-product-title">Artist Name</h3>
-                                    <p><em>{{title}}</em> 2015</p>
-                                    <p>Letterpress Print</p>
-		                        </div>
-		                    {{/if}}
-		                {{/each}}
-
-					</div>
-				</div><!-- .show-swiper-container -->
-
+				{{#each artist in artists}}
+					<h3>{{artist}}</h3>
+				{{/each}}
 	        </div>
 	    </div>
 	</div>

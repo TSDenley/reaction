@@ -36,12 +36,25 @@ Router.map(function route() {
     },
 
     data() {
+      let printsArray = Products.find().fetch();
+
       return {
         showTag: Tags.findOne({ _id: showTagId }),
+
         showProducts: Products.find({
           hashtags: showTagId
         }).fetch(),
-				homeSlides: home_slides.find().fetch()
+
+				homeSlides: home_slides.find().fetch(),
+
+        artists: _.uniq(printsArray.map(function(prints) {
+          let meta = prints.metafields;
+          for (let i = 0; i < meta.length; i++) {
+            if ( meta[i].key === 'Artist' ) {
+              return meta[i].value;
+            }
+          }
+        }))
       };
     },
 
@@ -70,15 +83,6 @@ Router.map(function route() {
 		name: 'showing',
 		template: 'showing',
 		controller: ShopController,
-
-		// onBeforeAction() {
-    //   $('body').addClass('hide-header');
-    //   this.next();
-    // },
-		//
-    // onStop() {
-    //   $('body').removeClass('hide-header');
-    // },
 
     data() {
       return {

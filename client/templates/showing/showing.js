@@ -32,3 +32,12 @@ Template.showing.helpers({
   }
 
 });
+
+
+Template.showing.onRendered(function(){
+	let swiper = new Swiper('.show-swiper-container', {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    freeMode: true
+  });
+});

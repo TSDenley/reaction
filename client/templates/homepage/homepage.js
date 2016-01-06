@@ -33,6 +33,38 @@ Template.homepage.helpers({
 
 	slideImgPath() {
 		return '/resources/images/';
+	},
+
+  /**
+  * Returns the artist's name of a print
+  * @param printID - string
+  */
+	printsArtistName(printID) {
+		let print = Products.findOne({ _id: printID }),
+        meta = print.metafields;
+
+		for (let i = 0; i < meta.length; i++) {
+			if ( meta[i].key === 'Artist' ) {
+				return meta[i].value;
+			}
+		}
 	}
 
+});
+
+
+Template.homepage.onRendered(function(){
+
+  /**
+  * Init Swipers
+  */
+	let mainSwiper = new Swiper('.main-swiper-container', {
+			pagination: '.swiper-pagination'
+	});
+
+	let showSwiper = new Swiper('.show-swiper-container', {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    freeMode: true
+  });
 });
