@@ -45,8 +45,6 @@ Router.map(function route() {
           hashtags: showTagId
         }).fetch(),
 
-				homeSlides: home_slides.find().fetch(),
-
         artists: _.uniq(printsArray.map(function(prints) {
           let meta = prints.metafields;
           for (let i = 0; i < meta.length; i++) {

@@ -33,10 +33,6 @@ Template.homepage.helpers({
     return false;
   },
 
-	slideImgPath() {
-		return '/resources/images/';
-	},
-
   /**
   * Returns the artist's name of a print
   * @param printID - string
@@ -65,18 +61,9 @@ Template.homepage.helpers({
 
 
 Template.homepage.onRendered(function(){
-
-  /**
-  * Init Swipers
-  */
-	let mainSwiper = new Swiper('.main-swiper-container', {
-			pagination: '.swiper-pagination'
-	});
-
 	let showSwiper = new Swiper('.show-swiper-container', {
     slidesPerView: 2,
     spaceBetween: 20,
     freeMode: true
   });
-
 });
