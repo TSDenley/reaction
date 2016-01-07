@@ -21,38 +21,18 @@ Router.map(function route() {
 
   // Replace 'index' template with 'homepage/homepage.html'
   _.extend(Router.routes.index.options, {
-
     template: 'homepage',
-
     onBeforeAction() {
       $('body').addClass('hide-header');
       this.next();
     },
-
     onStop() {
       $('body').removeClass('hide-header');
     },
-
-    data() {
-      let printsArray = Products.find().fetch();
-
-      return {
-        artists: _.uniq(printsArray.map(function(prints) {
-          let meta = prints.metafields;
-          for (let i = 0; i < meta.length; i++) {
-            if ( meta[i].key === 'Artist' ) {
-              return toTitleCase( meta[i].value );
-            }
-          }
-        }))
-      };
-    },
-
 		waitOn() {
       this.subscribe("home_slides");
       this.subscribe("Products", Session.get("productScrollLimit"));
     }
-
   });
 
 

@@ -6,5 +6,8 @@
 Template.homepage.helpers({
 	showTagName() {
 		return showTag().name;
+	},
+	artists() {
+		return getArtistsNames();
 	}
 });
