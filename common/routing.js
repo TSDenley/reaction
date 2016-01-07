@@ -6,8 +6,6 @@
 
 const staticPages = [ 'artists' ];
 
-const showTagId = 'tm6ZME5p8ze28yoe7'; // Hardcoded tag ID
-
 /**
  * app router mapping
  */
@@ -39,12 +37,6 @@ Router.map(function route() {
       let printsArray = Products.find().fetch();
 
       return {
-        showTag: Tags.findOne({ _id: showTagId }),
-
-        showProducts: Products.find({
-          hashtags: showTagId
-        }).fetch(),
-
         artists: _.uniq(printsArray.map(function(prints) {
           let meta = prints.metafields;
           for (let i = 0; i < meta.length; i++) {

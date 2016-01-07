@@ -1,0 +1,24 @@
+<template name="showSlides">
+	<div class="show-swiper-container">
+		<div class="swiper-wrapper">
+
+			{{#each slides}}
+				{{#if isVisible}}
+					<div class="show-print swiper-slide">
+						<div class="product-primary-images show-product-images">
+							{{#with media}}
+								<div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
+							{{else}}
+							  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
+							{{/with}}
+						</div>
+						<h3 class="show-product-title">{{title}}</h3>
+						<p><em>{{printsArtistName _id}}</em> {{printYear _id}}</p>
+						<p>{{description}}</p>
+					</div>
+				{{/if}}
+			{{/each}}
+
+		</div>
+	</div>
+</template>
