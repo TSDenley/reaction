@@ -1,0 +1,26 @@
+<template name="artistSlides">
+	<div class="artists-swiper-container">
+		<div class="swiper-wrapper">
+
+			{{#each artist in printsByArtist}}
+				<div class="swiper-slide">
+					<h3 class="h3">{{toTitleCase artist.name}}</h3>
+
+					{{#each print in artist.prints}}
+						<div class="print">
+
+							{{#with media print}}
+								<div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
+							{{else}}
+							  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
+							{{/with}}
+
+							<h4 class="h4">{{print.title}}</h4>
+						</div>
+					{{/each}}
+				</div>
+			{{/each}}
+
+		</div>
+	</div>
+</template>

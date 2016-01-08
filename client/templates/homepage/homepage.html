@@ -12,15 +12,13 @@
 
 	            <h3 class="static-label">Current Show</h3>
 
-                <h2 class="show-tag-title">{{showTagName}}</h2>
+                <h2 class="show-tag-title">{{showTag.name}}</h2>
 
 				{{> showSlides}}
 
                 <h2 class="show-tag-title">Artists</h2>
 
-				{{#each artist in artists}}
-					<h3  class="show-product-title">{{artist}}</h3>
-				{{/each}}
+				{{> artistSlides}}
 	        </div>
 	    </div>
 	</div>

@@ -3,11 +3,8 @@
 * Replaces the 'shop' view
 */
 
-Template.homepage.helpers({
-	showTagName() {
-		return showTag().name;
-	},
-	artists() {
-		return getArtistsNames();
-	}
-});
+// Template.homepage.helpers({
+// 	artists() {
+// 		return getArtistsNames();
+// 	}
+// });

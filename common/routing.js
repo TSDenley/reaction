@@ -31,7 +31,7 @@ Router.map(function route() {
     },
 		waitOn() {
       this.subscribe("home_slides");
-      this.subscribe("Products", Session.get("productScrollLimit"));
+      this.subscribe("Products", 999);
     }
   });
 
