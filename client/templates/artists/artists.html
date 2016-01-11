@@ -1,0 +1,42 @@
+<template name="artists">
+    <div class="page-header" style="background-image: url();">
+		<h1>Artists</h1>
+	</div>
+
+  <div class="container">
+      <div class="row">
+
+        <div class="prints-by-artist">
+          {{#each artist in printsByArtist}}
+
+            <h2 class="h2">{{toTitleCase (artist.name)}}</h2>
+            <p class="black-30"><small><i>Number of prints from this artist: {{artist.prints.length}}</i></small></p>
+
+            <div class="artist-swiper-container">
+              <div class="swiper-wrapper">
+
+                {{#each print in artist.prints}}
+                  <div class="swiper-slide">
+                    {{#with media print}}
+                      <div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
+                    {{else}}
+                      <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
+                    {{/with}}
+
+                    <h3 class="h3">{{print.title}}</h3>
+                    <p class="print-year">{{printYear print._id}}</p>
+                    <p class="description">{{print.description}}</p>
+                  </div>
+                {{/each}}
+
+              </div>
+            </div>
+
+            <hr>
+
+          {{/each}}
+        </div>
+
+      </div>
+  </div>
+</template>

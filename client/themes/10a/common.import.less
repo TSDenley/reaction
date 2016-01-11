@@ -11,6 +11,24 @@ body.hide-header {
 	padding: 30px;
 }
 
+.color-grey {
+	color: @grey;
+}
+
+
+/**
+* Create shades of grey classes
+*/
+.generate-greys(100);
+
+.generate-greys(@n, @i: 5) when (@i =< @n) {
+	.black-@{i} {
+		color: darken(#fff, @i);
+	}
+	.generate-greys(@n, (@i + 5));
+}
+
+
 /**
 * Headings
 */

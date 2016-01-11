@@ -4,19 +4,16 @@
  * ReactionCore common/routing.js contains the core routes.
  */
 
-const staticPages = [ 'artists' ];
+// const staticPages = [ 'artists' ];
 
-/**
- * app router mapping
- */
 Router.map(function route() {
 
-  for (let page of staticPages) {
-    this.route(page, {
-      controller: ShopController,
-      name: page
-    });
-  }
+  // for (let page of staticPages) {
+  //   this.route(page, {
+  //     controller: ShopController,
+  //     name: page
+  //   });
+  // }
 
 
   // Replace 'index' template with 'homepage/homepage.html'
@@ -48,16 +45,23 @@ Router.map(function route() {
 
 
   this.route('showing', {
-
 		path: '/showing',
 		name: 'showing',
 		template: 'showing',
 		controller: ShopController,
-
     waitOn() {
       return this.subscribe("Products", 999);
     }
+  });
 
+
+  this.route( 'artists', {
+    path: '/artists',
+    template: 'artists',
+    controller: ShopController,
+    waitOn() {
+      return this.subscribe("Products", 999);
+    }
   });
 
 
