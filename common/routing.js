@@ -42,7 +42,7 @@ Router.map(function route() {
     template: "products",
     controller: ShopController,
     waitOn() {
-      return this.subscribe("Products", Session.get("productScrollLimit"));
+      return this.subscribe("Products", 999);
     }
   });
 
@@ -64,7 +64,7 @@ Router.map(function route() {
     },
 
     waitOn() {
-      return this.subscribe("Products", Session.get("productScrollLimit"));
+      return this.subscribe("Products", 999);
     }
 
   });
