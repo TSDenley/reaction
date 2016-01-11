@@ -30,7 +30,7 @@
                                         {{/with}}
                                     </div>
                                     <h3 class="show-product-title">{{title}}</h3>
-                                    <p><em>{{printsArtistName _id}}</em> {{printYear _id}}</p>
+                                    <p><em>{{toTitleCase (printsArtistName _id)}}</em> {{printYear _id}}</p>
                                     <p>{{description}}</p>
                                 </div>
                             {{/if}}
