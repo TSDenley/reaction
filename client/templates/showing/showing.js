@@ -29,7 +29,14 @@ Template.showing.helpers({
       return defaultImage;
     }
     return false;
-  }
+  },
+
+	slides() {
+		return Products.find(
+			{ hashtags: showTagId },
+			{ sort: { createdAt: 1 } }
+		);
+	}
 
 });
 

@@ -54,15 +54,6 @@ Router.map(function route() {
 		template: 'showing',
 		controller: ShopController,
 
-    data() {
-      return {
-        showTag: Tags.findOne({ _id: showTagId }),
-        showProducts: Products.find({
-          hashtags: showTagId
-        }).fetch()
-      };
-    },
-
     waitOn() {
       return this.subscribe("Products", 999);
     }

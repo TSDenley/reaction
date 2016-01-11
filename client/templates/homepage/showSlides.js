@@ -30,31 +30,6 @@ Template.showSlides.helpers({
 	},
 
 
-	/**
-	* Returns the artist's name of a print
-	* @param printID - string
-	*/
-	printsArtistName(printID) {
-		let print = Products.findOne({ _id: printID }),
-		meta = print.metafields;
-
-		for (let i = 0; i < meta.length; i++) {
-			if ( meta[i].key === 'Artist' ) {
-				return toTitleCase( meta[i].value );
-			}
-		}
-	},
-
-
-	/**
-	* Returns the year print was created
-	* @param printID - string
-	*/
-	printYear(printID) {
-		let print = Products.findOne({ _id: printID });
-		return moment(print.createdAt).format('YYYY');
-	},
-
 	slides() {
 		return Products.find(
 			{ hashtags: showTagId },
