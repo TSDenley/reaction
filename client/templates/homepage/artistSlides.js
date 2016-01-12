@@ -36,7 +36,7 @@ Template.showSlides.onRendered(function(){
 	Meteor.defer(function(){
 		let swiper = new Swiper('.artists-swiper-container', {
 			slidesPerView: 'auto',
-			spaceBetween: 40,
+			spaceBetween: 20,
 			freeMode: true
 		});
 	});
