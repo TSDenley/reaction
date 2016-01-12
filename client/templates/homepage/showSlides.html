@@ -6,15 +6,14 @@
 				{{#if isVisible}}
 					<div class="show-print swiper-slide">
 						<div class="product-primary-images show-product-images">
-							{{#with media}}
-								<div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
-							{{else}}
-							  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
-							{{/with}}
+							<a href="{{pathFor 'product' q=_id}}">
+								{{#with media}}
+									<div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
+								{{else}}
+								  <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
+								{{/with}}
+							</a>
 						</div>
-						<h3 class="show-product-title">{{title}}</h3>
-						<p><em>{{toTitleCase (printsArtistName _id)}}</em> {{printYear _id}}</p>
-						<p>{{description}}</p>
 					</div>
 				{{/if}}
 			{{/each}}

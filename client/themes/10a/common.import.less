@@ -1,6 +1,9 @@
 body {
 	padding-top: 54px;
-	padding-bottom: 50px;
+	padding-bottom: 60px;
+	font-family: @serif;
+	font-size: 16px;
+	.black-85;
 }
 
 body.hide-header {
@@ -11,30 +14,14 @@ body.hide-header {
 	padding: 30px;
 }
 
-.color-grey {
-	color: @grey;
-}
-
-
-/**
-* Create shades of grey classes
-*/
-.generate-greys(100);
-
-.generate-greys(@n, @i: 5) when (@i =< @n) {
-	.black-@{i} {
-		color: darken(#fff, @i);
-	}
-	.generate-greys(@n, (@i + 5));
-}
-
 
 /**
 * Headings
 */
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-	color: @black;
+	.black-80;
 }
 
 
@@ -51,6 +38,10 @@ h1, h2, h3, h4, h5, h6,
 * Buttons
 */
 
+.btn {
+	font-family: @sans_serif;
+}
+
 .btn-sq {
 	border-radius: 0;
 }
@@ -64,18 +55,5 @@ h1, h2, h3, h4, h5, h6,
 	&:hover {
 		background-color: #333;
 		color: #fff;
-	}
-}
-
-
-/**
-* Home product images
-*/
-
-.show-product-images {
-	.product-image {
-		height: 30vh;
-		background-size: cover;
-		background-position: center;
 	}
 }

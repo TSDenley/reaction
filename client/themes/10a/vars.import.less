@@ -2,7 +2,49 @@
 * 10A theme variables
 */
 
+
+/**
+* TBS media query vars
+
+@media (max-width: @screen-xs-max) {
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+}
+
+@media (min-width: @screen-lg-min) {
+}
+
+*/
+
+
 @letter-spacing: normal;
 
-/* Colours */
+@serif: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Nimbus Roman No9 L', 'Times New Roman', serif;
+@sans_serif: 'aktiv-grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+/**
+* Colours
+*/
 @grey: #666;
+
+.color-grey {
+	color: @grey;
+}
+
+/**
+* Create shades of grey classes
+* e.g. .black-25 { color: #bfbfbf; }
+*/
+.generate-greys(100);
+
+.generate-greys(@n, @i: 5) when (@i =< @n) {
+	.black-@{i} {
+		color: darken(#fff, @i);
+	}
+	.generate-greys(@n, (@i + 5));
+}
