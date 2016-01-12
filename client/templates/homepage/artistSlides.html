@@ -2,7 +2,7 @@
 	<div class="artists-swiper-container">
 		<div class="swiper-wrapper">
 
-			{{#each artist in printsByArtist}}
+			{{#each artist in (printsByArtist 3)}}
 				<div class="swiper-slide">
 					<h3 class="h3">{{toTitleCase artist.name}}</h3>
 
