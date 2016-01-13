@@ -1,7 +1,7 @@
 <template name="showing">
 	{{! TODO: Showing page background image }}
     <div class="page-header" style="background-image: url();">
-		<h1>10A Prints Launch Show</h1>
+		<h1 class="h1">{{toUpperCase showTag.name}}</h1>
 	</div>
 
     <div class="container-main">
@@ -12,32 +12,37 @@
                     {{> accounts tpl="loginDropdown"}}
                 {{/if}}
 
-                <h3 class="static-label">Current Show</h3>
+                <h3 class="current-show-label">Current Show</h3>
 
                 <h2 class="show-tag-title">{{showTag.name}}</h2>
 
-                <div class="show-swiper-container">
-                    <div class="swiper-wrapper">
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-                        {{#each slides}}
-                            {{#if isVisible}}
-                                <div class="show-print swiper-slide">
-                                    <div class="product-primary-images show-product-images">
-                                        {{#with media}}
-                                            <div class="product-image" style="background-image: url('{{url store='large'}}')"></div>
+                <div class="showing-prints">
+                    {{#each artist in printsByArtist}}
+
+                        <div class="artist">
+                            <h2 class="h2">{{toUpperCase (artist.name)}}</h2>
+                            <div class="row grid">
+
+                                {{#each print in artist.prints}}
+                                    <div class="print grid-item col-xs-6">
+                                        {{#with media print}}
+                                            <img src="{{url store='image'}}" alt="{{print.title}}" class="print-image">
                                         {{else}}
-                                          <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
+                                            <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
                                         {{/with}}
-                                    </div>
-                                    <h3 class="show-product-title">{{title}}</h3>
-                                    <p><em>{{toTitleCase (printsArtistName _id)}}</em> {{printYear _id}}</p>
-                                    <p>{{description}}</p>
-                                </div>
-                            {{/if}}
-                        {{/each}}
 
-                    </div>
-                </div><!-- .show-swiper-container -->
+                                        <h3 class="h3"><em>{{print.title}}</em>, {{printYear print._id}}</h3>
+                                        <p class="description">{{print.description}}</p>
+                                    </div>
+                                {{/each}}
+
+                            </div>
+                        </div>
+
+                    {{/each}}
+                </div>
             </div>
         </div>
     </div>

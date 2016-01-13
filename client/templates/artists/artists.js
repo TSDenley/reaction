@@ -34,7 +34,7 @@ Template.artists.onRendered(function(){
 		let swiper = new Swiper('.artist-swiper-container', {
 			slidesPerView: 3,
 			spaceBetween: 20,
-			// freeMode: true
+			freeMode: true
 		});
 	});
 });
