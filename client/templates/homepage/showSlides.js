@@ -40,7 +40,7 @@ Template.showSlides.helpers({
 
 
 Template.showSlides.onRendered(function(){
-	Meteor.defer(function(){
+	$('.show-swiper-container').imagesLoaded(function() {
 		let showSwiper = new Swiper('.show-swiper-container', {
 			slidesPerView: 2,
 			spaceBetween: 20,

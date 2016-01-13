@@ -8,9 +8,11 @@ Template.homeSlides.helpers({
 });
 
 Template.homeSlides.onRendered(function() {
-	Meteor.defer(function(){
-		let mainSwiper = new Swiper('.main-swiper-container', {
-			pagination: '.swiper-pagination'
+	Meteor.defer(function() {
+		$('.main-swiper-container').imagesLoaded(function() {
+			let mainSwiper = new Swiper('.main-swiper-container', {
+				pagination: '.swiper-pagination'
+			});
 		});
 	});
 });

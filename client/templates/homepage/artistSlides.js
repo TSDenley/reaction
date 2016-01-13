@@ -34,10 +34,12 @@ Template.artistSlides.helpers({
 
 Template.showSlides.onRendered(function(){
 	Meteor.defer(function(){
-		let swiper = new Swiper('.artists-swiper-container', {
-			slidesPerView: 'auto',
-			spaceBetween: 20,
-			freeMode: true
+		$('.artists-swiper-container').imagesLoaded(function() {
+			let swiper = new Swiper('.artists-swiper-container', {
+				slidesPerView: 'auto',
+				spaceBetween: 20,
+				freeMode: true
+			});
 		});
 	});
 });
