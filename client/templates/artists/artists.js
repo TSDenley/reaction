@@ -32,7 +32,7 @@ Template.artists.helpers({
 Template.artists.onRendered(function(){
 	Meteor.defer(function(){
 		let swiper = new Swiper('.artist-swiper-container', {
-			slidesPerView: 3,
+			slidesPerView: 'auto',
 			spaceBetween: 20,
 			freeMode: true
 		});
