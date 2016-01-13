@@ -27,14 +27,16 @@
 
                                 {{#each print in artist.prints}}
                                     <div class="print grid-item col-xs-6">
-                                        {{#with media print}}
-                                            <img src="{{url store='medium'}}" alt="{{print.title}}" class="print-image">
-                                        {{else}}
-                                            <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
-                                        {{/with}}
+										<a href="{{pathFor 'product' _id=print._id}}">
+	                                        {{#with media print}}
+	                                            <img src="{{url store='medium'}}" alt="{{print.title}}" class="print-image">
+	                                        {{else}}
+	                                            <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
+	                                        {{/with}}
 
-                                        <h3 class="h3"><em>{{print.title}}</em>, {{printYear print._id}}</h3>
-                                        <p class="description">{{print.description}}</p>
+	                                        <h3 class="h3"><em>{{print.title}}</em>, {{printYear print._id}}</h3>
+	                                        <p class="description">{{print.description}}</p>
+										</a>
                                     </div>
                                 {{/each}}
 
