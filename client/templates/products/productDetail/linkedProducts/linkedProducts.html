@@ -6,38 +6,40 @@
 
 			<div class="row grid current-show">
 				{{#each otherShowWorks}}
-				<div class="col-sm-6 print grid-item">
-					<a href="{{pathFor 'product' q=_id}}">
-						{{#with media}}
-						<img src="{{url store='medium'}}" alt="{{title}}" class="print-image">
-						{{else}}
-						<div class="product-image placeholder" style="background-image: url(/resources/placeholder.gif)"></div>
-						{{/with}}
+					<div class="col-sm-6 print grid-item">
+						<a href="{{pathFor 'product' _id=_id}}">
+							{{#with media}}
+							<img src="{{url store='medium'}}" alt="{{title}}" class="print-image">
+							{{else}}
+							<div class="product-image placeholder" style="background-image: url(/resources/placeholder.gif)"></div>
+							{{/with}}
 
-						<h4 class="h4">{{title}}</h4>
-						<h5 class="h5"><em>{{toTitleCase(printsArtistName _id)}}</em>, {{printYear _id}}</h5>
-					</a>
-				</div>
+							<h4 class="h4">{{title}}</h4>
+							<h5 class="h5"><em>{{toTitleCase(printsArtistName _id)}}</em>, {{printYear _id}}</h5>
+						</a>
+					</div>
 				{{/each}}
 			</div>
 
-			<h3 class="h3">Other Works by {{toTitleCase(printsArtistName _id)}}</h3>
+			{{#if artistOtherWorks}}
+				<h3 class="h3">Other Works by {{toTitleCase(printsArtistName _id)}}</h3>
 
-			<div class="row grid artist">
-				{{#each artistOtherWorks}}
-				<div class="col-sm-6 print grid-item">
-					<a href="{{pathFor 'product' q=_id}}">
-						{{#with media}}
-						<img src="{{url store='medium'}}" alt="{{title}}" class="print-image">
-						{{else}}
-						<div class="product-image placeholder" style="background-image: url(/resources/placeholder.gif)"></div>
-						{{/with}}
+				<div class="row grid artist">
+					{{#each artistOtherWorks}}
+						<div class="col-sm-6 print grid-item">
+							<a href="{{pathFor 'product' _id=_id}}">
+								{{#with media}}
+								<img src="{{url store='medium'}}" alt="{{title}}" class="print-image">
+								{{else}}
+								<div class="product-image placeholder" style="background-image: url(/resources/placeholder.gif)"></div>
+								{{/with}}
 
-						<h4 class="h4">{{title}}, {{printYear _id}}</h4>
-					</a>
+								<h4 class="h4">{{title}}, {{printYear _id}}</h4>
+							</a>
+						</div>
+					{{/each}}
 				</div>
-				{{/each}}
-			</div>
+			{{/if}}
 
 		</div>
 	</div>
