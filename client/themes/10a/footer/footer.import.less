@@ -54,7 +54,7 @@ footer.reaction-navigation-footer {
 				}
 
 				.cart-icon {
-					@cart-icon-bgc: #27bc16;
+					@cart-icon-bgc: @footer-bgc;
 
 					background-color: @cart-icon-bgc;
 					margin: 0;
@@ -64,11 +64,11 @@ footer.reaction-navigation-footer {
 					&:hover,
 					&:active,
 					&:focus {
-						background-color: lighten(@cart-icon-bgc, 10%);
+						background-color: lighten(@cart-icon-bgc, 20%);
 					}
 
 					.badge {
-						background-color: darken(@cart-icon-bgc, 10%);
+						background-color: darken(@cart-icon-bgc, 20%);
 						right: 5px;
 						bottom: auto;
 					}
