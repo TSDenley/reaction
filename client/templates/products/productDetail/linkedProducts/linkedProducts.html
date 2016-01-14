@@ -1,0 +1,40 @@
+<template name="linkedProducts">
+	<div class="row linked-products">
+		<div class="col-sm-12">
+
+			<h3 class="h3">Other Works in Show</h3>
+
+			<div class="row grid current-show">
+				{{#each otherShowWorks}}
+				<div class="col-sm-6 print grid-item">
+					{{#with media}}
+					<img src="{{url store='medium'}}" alt="{{title}}" class="print-image">
+					{{else}}
+					<div class="product-image placeholder" style="background-image: url(/resources/placeholder.gif)"></div>
+					{{/with}}
+
+					<h4 class="h4">{{title}}</h4>
+					<h5 class="h5"><em>{{toTitleCase(printsArtistName _id)}}</em>, {{printYear _id}}</h5>
+				</div>
+				{{/each}}
+			</div>
+
+			<h3 class="h3">Other Works by {{toTitleCase(printsArtistName _id)}}</h3>
+
+			<div class="row grid artist">
+				{{#each artistOtherWorks}}
+				<div class="col-sm-6 print grid-item">
+					{{#with media}}
+					<img src="{{url store='medium'}}" alt="{{title}}" class="print-image">
+					{{else}}
+					<div class="product-image placeholder" style="background-image: url(/resources/placeholder.gif)"></div>
+					{{/with}}
+
+					<h4 class="h4">{{title}}, {{printYear _id}}</h4>
+				</div>
+				{{/each}}
+			</div>
+
+		</div>
+	</div>
+</template>

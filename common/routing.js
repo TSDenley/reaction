@@ -33,6 +33,18 @@ Router.map(function route() {
   });
 
 
+  /**
+  * Extend single 'product' route to subscribe to all products
+  * to allow finding of linked products
+  */
+	_.extend(Router.routes.product.options, {
+		subscriptions() {
+			this.subscribe("Product", this.params._id);
+      this.subscribe("Products", 999);
+		}
+	});
+
+
   this.route('prints', {
     path: '/prints',
     name: 'prints',
