@@ -1,13 +1,11 @@
-Template.artists.helpers({
-	/**
-	* Get print images
-	*/
-	media( print ) {
+Template.artistsPrint.helpers({
+
+	media() {
 		let defaultImage;
 		let variantId;
 		let variants = [];
 
-		for (let variant of print.variants) {
+		for (let variant of this.variants) {
 			if (!variant.parentId) {
 				variants.push(variant);
 			}
@@ -27,10 +25,11 @@ Template.artists.helpers({
 
 		return false;
 	}
+
 });
 
-Template.artists.onRendered(function(){
-	Meteor.defer(function(){
+Template.artistsPrint.onRendered(function(){
+	$(function(){
 		let swiper = new Swiper('.artist-swiper-container', {
 			slidesPerView: 'auto',
 			spaceBetween: 20,
