@@ -3,7 +3,7 @@
 */
 
 Template.header.replaces('layoutHeader');
-Template.newHeaderBrand.replaces('headerBrand');
+// Template.newHeaderBrand.replaces('headerBrand');
 
 Template.layoutHeader.events({
 	'click .back-button a': function() {

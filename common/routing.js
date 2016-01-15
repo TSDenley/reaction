@@ -8,6 +8,10 @@
 
 Router.map(function route() {
 
+	/**
+	* Static pages
+	* Not currently used
+	*/
   // for (let page of staticPages) {
   //   this.route(page, {
   //     controller: ShopController,
@@ -16,7 +20,10 @@ Router.map(function route() {
   // }
 
 
-  // Replace 'index' template with 'homepage/homepage.html'
+	/**
+	* Home
+	* Replace 'index' template with 'homepage/homepage.html'
+	*/
   _.extend(Router.routes.index.options, {
     template: 'homepage',
     onBeforeAction() {
@@ -34,6 +41,7 @@ Router.map(function route() {
 
 
   /**
+	* Single print/product
   * Extend single 'product' route to subscribe to all products
   * to allow finding of linked products
   */
@@ -45,6 +53,9 @@ Router.map(function route() {
 	});
 
 
+	/**
+	* Prints/Products page
+	*/
   this.route('prints', {
     path: '/prints',
     name: 'prints',
@@ -56,6 +67,9 @@ Router.map(function route() {
   });
 
 
+	/**
+	* Showing page
+	*/
   this.route('showing', {
 		path: '/showing',
 		name: 'showing',
@@ -67,6 +81,9 @@ Router.map(function route() {
   });
 
 
+	/**
+	* Artists page
+	*/
   this.route( 'artists', {
     path: '/artists',
     template: 'artists',
@@ -77,6 +94,22 @@ Router.map(function route() {
   });
 
 
+	/**
+	* Checkout
+	* Replace checkout templates
+	*/
+	_.extend(Router.routes.cartCheckout.options, {
+		yieldTemplates: {
+      newCheckoutHeader: {
+        to: "layoutHeader"
+      }
+    }
+	});
+
+
+	/**
+	* Route not found
+	*/
   return this.route("notFound", {
     path: "/(.*)"
   });
