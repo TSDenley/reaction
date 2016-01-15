@@ -20,32 +20,33 @@
 
                 <div class="showing-prints">
                     {{#each artist in printsByArtist}}
-
                         <div class="artist">
                             <h2 class="h2">{{toUpperCase (artist.name)}}</h2>
                             <div class="row grid">
-
                                 {{#each print in artist.prints}}
-                                    <div class="print grid-item col-xs-6">
-										<a href="{{pathFor 'product' _id=print._id}}">
-	                                        {{#with media print}}
-	                                            <img src="{{url store='medium'}}" alt="{{print.title}}" class="print-image">
-	                                        {{else}}
-	                                            <div class="product-image" style="background-image: url(/resources/placeholder.gif)"></div>
-	                                        {{/with}}
-
-	                                        <h3 class="h3"><em>{{print.title}}</em>, {{printYear print._id}}</h3>
-	                                        <p class="description">{{print.description}}</p>
-										</a>
-                                    </div>
+									{{> showingPrint print}}
                                 {{/each}}
-
                             </div>
                         </div>
-
                     {{/each}}
                 </div>
             </div>
         </div>
     </div>
+</template>
+
+
+<template name="showingPrint">
+	<div class="print grid-item col-xs-6">
+		<a href="{{pathFor 'product' _id=_id}}">
+			{{#with media}}
+				<img src="{{url store='medium'}}" alt="{{title}}" class="print-image">
+			{{else}}
+				<img class="product-image" src="/resources/placeholder.gif">
+			{{/with}}
+
+			<h3 class="h3"><em>{{title}}</em>, {{printYear _id}}</h3>
+			<p class="description">{{description}}</p>
+		</a>
+	</div>
 </template>

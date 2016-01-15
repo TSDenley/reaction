@@ -3,17 +3,14 @@
 * Replaces the 'shop' view
 */
 
-/**
-* Helper methods
-*/
-Template.showing.helpers({
+Template.showingPrint.helpers({
 
-  media( print ) {
+  media() {
 		let defaultImage;
 		let variantId;
 		let variants = [];
 
-		for (let variant of print.variants) {
+		for (let variant of this.variants) {
 			if (!variant.parentId) {
 				variants.push(variant);
 			}
@@ -37,14 +34,11 @@ Template.showing.helpers({
 });
 
 
-
-Template.showing.onRendered(function(){
-	Meteor.defer(function(){
-		$('.grid').imagesLoaded(function() {
-			this.masonry({
-				itemSelector: '.grid-item',
-				percentPosition: true
-			});
+Template.showingPrint.onRendered(function() {
+	$('.grid').imagesLoaded(function() {
+		$('.grid').masonry({
+			itemSelector: '.grid-item',
+			percentPosition: true
 		});
 	});
 });
