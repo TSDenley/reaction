@@ -1,8 +1,4 @@
-Template.linkedProducts.helpers({
-
-	/**
-	* Print images
-	*/
+Template.linkedProduct.helpers({
 	media() {
 		let defaultImage;
 		let variantId;
@@ -27,8 +23,11 @@ Template.linkedProducts.helpers({
 		}
 
 		return false;
-	},
+	}
+});
 
+
+Template.linkedProducts.helpers({
 
 	/**
 	* Get other prints from the same artist (max 3)
@@ -72,13 +71,11 @@ Template.linkedProducts.helpers({
 });
 
 
-Template.linkedProducts.onRendered(function(){
-	Meteor.defer(function(){
-		$('.grid').imagesLoaded(function() {
-			this.masonry({
-				itemSelector: '.grid-item',
-				percentPosition: true
-			});
+Template.linkedProduct.onRendered(function(){
+	$('.grid').imagesLoaded(function() {
+		$('.grid').masonry({
+			itemSelector: '.grid-item',
+			percentPosition: true
 		});
 	});
 });
