@@ -1,0 +1,20 @@
+<template name="homeSlides">
+    <div class="swiper-container main-swiper-container">
+        <div class="swiper-wrapper">
+			{{#each slides}}
+				{{> homeSlide}}
+			{{/each}}
+		</div>
+		<div class="swiper-pagination"></div>
+    </div>
+</template>
+
+
+<template name="homeSlide">
+	<div class="swiper-slide" style="background-image:url({{slideImgPath}}{{background_image}})">
+		<h2 class="h2 slide-subtitle ">{{subtitle}}</h2>
+		<h1 class="h1 slide-title">{{{title}}}</h1>
+		<p class="slide-caption">{{strapline}}</p>
+		<a href="{{cta_link}}" class="slide-link btn btn-sm btn-10a">{{cta_text}}</a>
+	</div>
+</template>
