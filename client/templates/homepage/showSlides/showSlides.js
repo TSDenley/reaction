@@ -1,4 +1,14 @@
 Template.showSlides.helpers({
+	slides() {
+		return Products.find(
+			{ hashtags: showTagId },
+			{ sort: { createdAt: 1 } }
+		);
+	}
+});
+
+
+Template.showSlide.helpers({
 
 	/**
 	* Get print images
@@ -27,20 +37,13 @@ Template.showSlides.helpers({
 		}
 
 		return false;
-	},
-
-
-	slides() {
-		return Products.find(
-			{ hashtags: showTagId },
-			{ sort: { createdAt: 1 } }
-		);
 	}
+
 });
 
 
-Template.showSlides.onRendered(function(){
-	$('.show-swiper-container').imagesLoaded(function() {
+Template.showSlide.onRendered(function(){
+	$(function() {
 		let showSwiper = new Swiper('.show-swiper-container', {
 			slidesPerView: 2,
 			spaceBetween: 20,

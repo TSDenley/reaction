@@ -1,14 +1,14 @@
-Template.artistSlides.helpers({
+Template.artistSlide.helpers({
 
 	/**
 	* Get print images
 	*/
-	media( print ) {
+	media() {
 		let defaultImage;
 		let variantId;
 		let variants = [];
 
-		for (let variant of print.variants) {
+		for (let variant of this.variants) {
 			if (!variant.parentId) {
 				variants.push(variant);
 			}
@@ -27,19 +27,26 @@ Template.artistSlides.helpers({
 		}
 
 		return false;
+	},
+
+	artist() {
+		for ( let i = 0; i < this.metafields.length; i++ ) {
+			let meta = this.metafields[i];
+			if ( meta.key === 'Artist' ) {
+				return meta.value;
+			}
+		}
 	}
 
 });
 
 
-Template.showSlides.onRendered(function(){
-	Meteor.defer(function(){
-		$('.artists-swiper-container').imagesLoaded(function() {
-			let swiper = new Swiper('.artists-swiper-container', {
-				slidesPerView: 'auto',
-				spaceBetween: 20,
-				freeMode: true
-			});
+Template.showSlide.onRendered(function(){
+	$(function(){
+		let swiper = new Swiper('.artists-swiper-container', {
+			slidesPerView: 'auto',
+			spaceBetween: 20,
+			freeMode: true
 		});
 	});
 });
