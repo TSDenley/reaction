@@ -1,3 +1,48 @@
+Template.linkedProducts.helpers({
+
+	/**
+	* Get other prints from the same artist (max 3)
+	*/
+	artistOtherWorks() {
+		let product = selectedProduct(),
+			artist = null;
+
+		for (var i = 0; i < product.metafields.length; i++) {
+			let field = product.metafields[i];
+
+			if ( field.key === 'Artist' ) {
+				artist = field.value;
+				break;
+			}
+		}
+
+		let otherPrints = Products.find({
+			'metafields.key': 'Artist',
+			'metafields.value': artist,
+			_id: { $ne: product._id }
+		}).fetch();
+
+		return shuffleArray( otherPrints ).slice( 0, 3 );
+	},
+
+
+	/**
+	* Get other prints from the same show
+	* Limit to 3, exclude current print
+	*/
+	otherShowWorks() {
+		let product = selectedProduct();
+
+		let showPrints = Products.find({
+			hashtags: showTagId,
+			_id: { $ne: product._id }
+		}).fetch();
+
+		return shuffleArray( showPrints ).slice( 0, 3 );
+	}
+});
+
+
 Template.linkedProduct.helpers({
 	media() {
 		let defaultImage;
@@ -27,55 +72,15 @@ Template.linkedProduct.helpers({
 });
 
 
-Template.linkedProducts.helpers({
-
-	/**
-	* Get other prints from the same artist (max 3)
-	*/
-	artistOtherWorks() {
-		let product = selectedProduct(),
-			artist = null;
-
-		for (var i = 0; i < product.metafields.length; i++) {
-			let field = product.metafields[i];
-
-			if ( field.key === 'Artist' ) {
-				artist = field.value;
-				break;
-			}
-		}
-
-		let otherPrints = Products.find({
-			'metafields.key': 'Artist',
-			'metafields.value': artist,
-			_id: { $ne: product._id }
-		}).fetch().slice( 0, 3 );
-
-		return shuffleArray( otherPrints );
-	},
-
-
-	/**
-	* Get other prints from the same show (limit 3)
-	*/
-	otherShowWorks() {
-		let product = selectedProduct();
-
-		let showPrints = Products.find({
-			hashtags: showTagId,
-			_id: { $ne: product._id }
-		}).fetch().slice( 0, 3 );
-
-		return shuffleArray( showPrints );
-	}
-});
-
-
 Template.linkedProduct.onRendered(function(){
 	$('.grid').imagesLoaded(function() {
-		$('.grid').masonry({
-			itemSelector: '.grid-item',
-			percentPosition: true
+		$('.grid').each(function () {
+			let $grid = $(this).masonry({
+				itemSelector: '.grid-item',
+				percentPosition: true
+			});
+
+			$grid.masonry('reloadItems');
 		});
 	});
 });
