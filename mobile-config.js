@@ -4,7 +4,7 @@
 */
 
 App.info({
-	id: 'com.tenadigital.prints',
+	id: 'uk.tenadigital.prints',
 	name: '10A Digital',
 	version: '0.0.1',
 	description: '10A Digital Prints',
