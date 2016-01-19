@@ -6,6 +6,7 @@
 App.info({
 	id: 'com.tenadigital.prints',
 	name: '10A Digital',
+	version: '0.0.1',
 	description: '10A Digital Prints',
 	author: '10A Digital',
 	email: 'info@10adigital.uk',
