@@ -1,0 +1,12 @@
+{
+	"apn-dev": {
+		"passphrase": "10adigital",
+		"key": "iosGp/apn-dev/tenadigitaldev_key.pem",
+		"cert": "iosGp/apn-dev/tenadigitaldev_cert.pem"
+	},
+	"production": false,
+	"badge": true,
+	"sound": true,
+	"alert": true,
+	"vibrate": true
+}
