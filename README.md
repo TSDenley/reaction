@@ -52,7 +52,9 @@ It's included after Bootstrap and the default styling so it can be overridden an
 
 ### Static pages
 
-__Static pages are located in `/reaction/client/templates/static/`.__
+__There are no longer any static pages__
+
+~~Static pages are located in `/reaction/client/templates/static/`.~~
 
 To add new static pages:
 
@@ -75,11 +77,6 @@ https://developer.apple.com/library/mac/documentation/IDEs/Conceptual/AppDistrib
 [Editing mobile-config.js](https://docs.meteor.com/#/full/mobileconfigjs)
 
 [http://stackoverflow.com/questions/29279287/in-meteor-app-how-to-add-orgin-in-cordova-config-xml](http://stackoverflow.com/questions/29279287/in-meteor-app-how-to-add-orgin-in-cordova-config-xml)
-
-
-## Issues
-
-- Regarding `WARN core: Open Exchange Rates AppId not configured. Configure for current rates`. Looks like we need an API key from [here] (https://openexchangerates.org/signup/free)? Is this a requirement if we are only using 1 form of currency?
 
 ---
 
