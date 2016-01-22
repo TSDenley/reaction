@@ -137,7 +137,6 @@ reactioncommerce:core-theme@1.8.0
 reactioncommerce:reaction-accounts@1.5.1
 reactioncommerce:reaction-analytics@1.1.1
 reactioncommerce:reaction-analytics-libs@1.1.0
-reactioncommerce:reaction-paypal@1.2.2
 reactioncommerce:reaction-shipping@0.6.1
 reactioncommerce:reaction-social@0.4.1
 reactioncommerce:reaction-stripe@3.0.1

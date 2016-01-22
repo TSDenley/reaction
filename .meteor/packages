@@ -54,7 +54,6 @@ reactioncommerce:reaction-social
 
 # Reaction Payment Packages
 
-reactioncommerce:reaction-paypal
 reactioncommerce:reaction-stripe
 #reactioncommerce:reaction-auth-net
 #reactioncommerce:reaction-braintree
