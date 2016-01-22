@@ -1,0 +1,1 @@
+Template.newLoginInline.replaces('loginInline');
