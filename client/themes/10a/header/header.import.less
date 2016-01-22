@@ -40,18 +40,28 @@ main{
 .page-header {
 	background-color: @black;
 	color: @white;
+	height: 20vh;
 	padding: 20px 15px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
 	margin: 0;
+	position: relative;
+	border: none;
 
 	.h1 {
 		font-family: @sans_serif;
 		font-weight: bold;
 		color: @white;
-		font-size: 29px;
+		font-size: 24px;
 		text-transform: uppercase;
-		margin: 0;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		margin: 5vh 20px;
+
+		@media screen and (min-width: @screen-sm-min) {
+			font-size: 45px;
+		}
 	}
 }
