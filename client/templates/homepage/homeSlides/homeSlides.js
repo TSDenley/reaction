@@ -12,10 +12,12 @@ Template.homeSlide.helpers({
 });
 
 
-Template.homeSlide.onRendered(function() {
-	$(function() {
-		let mainSwiper = new Swiper('.main-swiper-container', {
-			pagination: '.swiper-pagination'
+Template.homeSlides.onRendered(function() {
+	Meteor.defer(function() {
+		$(function() {
+			let mainSwiper = new Swiper('.main-swiper-container', {
+				pagination: '.swiper-pagination'
+			});
 		});
 	});
 });
