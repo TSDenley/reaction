@@ -1,0 +1,30 @@
+<template name="newProductImageGallery">
+	<div id="galleryDropPane" class="galleryDropPane">
+		<ul class="product-main-images">
+			{{#each media}}
+				{{> imageDetail}}
+			{{else}}
+				<li><img src= "/resources/placeholder.gif" class="img-responsive" id="img-upload"></li>
+			{{/each}}
+		</ul>
+
+		{{> imageUploader}}
+	</div>
+</template>
+
+
+<template name="newImageDetail">
+	<li class="product-image" data-index="{{_id}}">
+		<img data-action="zoom" src="{{url uploading='/resources/placeholder.gif' storing='/resources/placeholder.gif' store='large'}}" class="img-responsive" alt="{{title}}">
+
+		{{#unless this.isUploaded}}
+			{{> FS.UploadProgressBar bootstrap=true}}
+		{{/unless}}
+
+		{{#if hasPermission "createProduct"}}
+			<div class="gallery-tools">
+				<a class="image-remove-link" data-index="{{_id}}"><i class="remove-image fa fa-times-circle fa-2x"></i></a>
+			</div>
+		{{/if}}
+	</li>
+</template>
